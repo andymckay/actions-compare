@@ -1,0 +1,6 @@
+version: 2
+jobs:
+  build:
+    steps:
+      - run:
+        command: python3 projects/python-simple/test.py
