@@ -11,6 +11,7 @@ for project in os.listdir("projects"):
             timestamp.write(str(time.time()))
 
 def cmd(*args):
+    print("Calling:", args)
     res = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if res.returncode != 0:
         print("Error occurred on calling: %s" % ' '.join(args))
