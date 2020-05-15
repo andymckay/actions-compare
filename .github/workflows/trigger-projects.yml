@@ -1,0 +1,10 @@
+name: Trigger projects
+on: [repository_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Trigger commits
+      run: python3 admin/trigger.py
