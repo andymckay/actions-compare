@@ -1,6 +1,6 @@
 name: Project - Python sum
 on:
-  push:
+  pull_request:
     paths:
       - projects/python-simple/*
       
