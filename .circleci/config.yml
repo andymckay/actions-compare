@@ -1,6 +1,18 @@
-version: 2
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
 jobs:
-  build:
+  build-and-test:
+    executor: python/default
     steps:
+      - checkout
       - run:
-        command: python3 projects/python-simple/test.py
+          command: python3 projects/python-simple/test.py
+          name: Test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
